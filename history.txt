@@ -1,0 +1,16 @@
+  680  cd Documents
+  681  mkdir linux
+  682  cd linux
+  683  git clone git@github.com:anaseller/git-feature-branch.git
+  684  cd git-feature-branch
+  685  git checkout -b feature
+  686  echo "New feature" >> README.md
+  687  echo "*.log" >> .gitignore
+  688  git add README.md .gitignore
+  689  git commit -m "Updated README and .gitignore"
+  690  git push origin feature
+  691  git commit --amend -m "Updated README and .gitignore (amend)"
+  692  git push origin feature --force
+  693  git checkout main
+  694  git merge feature
+  695  git push origin main
